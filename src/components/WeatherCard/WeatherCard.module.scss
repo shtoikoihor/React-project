@@ -1,0 +1,285 @@
+@keyframes wc-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.skeleton {
+  background: #e5e7eb;
+  border-radius: 6px;
+  animation: wc-pulse 1.4s ease-in-out infinite;
+}
+
+.current {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 24px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #111827;
+  font-family: Manrope, -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.currentFlat {
+  background: #f9fafb;
+}
+
+.kindSun {
+  background: linear-gradient(180deg, #fef3c7 0%, #fff 100%);
+}
+
+.kindPartly {
+  background: linear-gradient(180deg, #dbeafe 0%, #fff 100%);
+}
+
+.kindCloud {
+  background: linear-gradient(180deg, #e5e7eb 0%, #fff 100%);
+}
+
+.kindRain {
+  background: linear-gradient(180deg, #dbeafe 0%, #f9fafb 100%);
+}
+
+.currentDefault,
+.currentLoading,
+.currentError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.currentLoading {
+  gap: 12px;
+}
+
+.currentError {
+  gap: 10px;
+}
+
+.temp {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -3px;
+  line-height: 1.05;
+}
+
+.desc {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.range {
+  font-size: 14px;
+  color: #9ca3af;
+  display: flex;
+  gap: 10px;
+}
+
+.errorText {
+  font-size: 12px;
+  color: #ef4444;
+}
+
+.skCurrentIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.skCurrentTemp {
+  width: 132px;
+  height: 52px;
+}
+
+.skCurrentDesc {
+  width: 168px;
+  height: 16px;
+}
+
+.skCurrentRange {
+  width: 96px;
+  height: 14px;
+}
+
+.hourly {
+  box-sizing: border-box;
+  width: 60px;
+  height: 90px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #111827;
+  font-family: Manrope, -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.hourlyDefault,
+.hourlyLoading,
+.hourlyError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hourlyLoading {
+  gap: 6px;
+}
+
+.hourlyTime {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.hourlyTemp {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hourlyErrorText {
+  font-size: 10px;
+  color: #ef4444;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.skHourlyTime {
+  width: 30px;
+  height: 10px;
+}
+
+.skHourlyIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+}
+
+.skHourlyTemp {
+  width: 22px;
+  height: 12px;
+}
+
+.daily {
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  color: #111827;
+  font-family: Manrope, -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.dailyDefault,
+.dailyLoading,
+.dailyError {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dailyDay {
+  width: 40px;
+  font-size: 14px;
+}
+
+.dailyRange {
+  font-size: 14px;
+  display: flex;
+  gap: 4px;
+  color: #9ca3af;
+}
+
+.dailyMax {
+  color: #111827;
+}
+
+.skDailyDay {
+  width: 40px;
+  height: 12px;
+}
+
+.skDailyIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.skDailyRange {
+  width: 64px;
+  height: 12px;
+}
+
+.metric {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #111827;
+  font-family: Manrope, -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.metricDefault,
+.metricLoading,
+.metricError {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metricLoading {
+  gap: 8px;
+}
+
+.metricError {
+  gap: 6px;
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.metricValue {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.metricErrorText {
+  font-size: 12px;
+  color: #ef4444;
+}
+
+.skMetricIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+}
+
+.skMetricLabel {
+  width: 56px;
+  height: 10px;
+}
+
+.skMetricValue {
+  width: 40px;
+  height: 16px;
+}
