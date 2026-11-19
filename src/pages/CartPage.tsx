@@ -26,6 +26,8 @@ export const CartPage = () => {
                 name={item.name}
                 price={item.price}
                 count={item.count}
+                category={item.category}
+                itemId={item.itemId}
               />
             ))}
           </div>

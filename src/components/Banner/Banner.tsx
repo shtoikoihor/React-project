@@ -2,13 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Banner.module.scss';
 import cn from 'classnames';
 
+const banners = [
+  './img/banner-phones.png',
+  './img/banner-accessories.png',
+  './img/banner-tablets.png',
+];
+
 export const Banner = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const banners = [
-    './img/banner-phones.png',
-    './img/banner-accessories.png',
-    './img/banner-tablets.png',
-  ];
   const touchStartX = useRef(0);
 
   useEffect(() => {
@@ -20,9 +21,9 @@ export const Banner = () => {
   }, []);
 
   //#region  Handle banner slider
-  const handleNext = () =>
-    setActiveIndex(prev => Math.min(prev + 1, banners.length - 1));
-  const handlePrev = () => setActiveIndex(prev => Math.max(prev - 1, 0));
+  const handleNext = () => setActiveIndex(prev => (prev + 1) % banners.length);
+  const handlePrev = () =>
+    setActiveIndex(prev => (prev - 1 + banners.length) % banners.length);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -45,7 +46,6 @@ export const Banner = () => {
       <button
         type="button"
         onClick={handlePrev}
-        disabled={activeIndex === 0}
         className={cn(styles.navButton, styles.navButtonLeft)}
         aria-label="Previous banner"
       >
@@ -77,7 +77,6 @@ export const Banner = () => {
       <button
         type="button"
         onClick={handleNext}
-        disabled={activeIndex === banners.length - 1}
         className={cn(styles.navButton, styles.navButtonRight)}
         aria-label="Next banner"
       >

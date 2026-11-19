@@ -41,11 +41,6 @@
   cursor: pointer;
   transition: opacity 0.2s ease;
 
-  &:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-  }
-
   @media (min-width: 640px) {
     display: flex;
     grid-row: 1;

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './CartItemCard.module.scss';
 import { useCart } from '../../context/CartContext';
 import minusActive from './img/buttons/minus-active.svg';
@@ -11,12 +12,32 @@ interface Props {
   name: string;
   price: string;
   count: number;
+  // Optional: items saved to localStorage before these fields existed
+  // don't have them, so such cards are rendered without a link.
+  category?: string;
+  itemId?: string;
 }
 
-export const CartItemCard = ({ id, image, name, price, count }: Props) => {
+export const CartItemCard = ({
+  id,
+  image,
+  name,
+  price,
+  count,
+  category,
+  itemId,
+}: Props) => {
   const { updateQuantity, removeFromCart } = useCart();
 
   const isMinusDisabled = count <= 1;
+
+  const productInfo = (
+    <>
+      <img src={image} alt="product image" className={styles.productImage} />
+
+      <p className={styles.productName}>{name}</p>
+    </>
+  );
 
   return (
     <div className={styles.CartItemCard}>
@@ -30,9 +51,13 @@ export const CartItemCard = ({ id, image, name, price, count }: Props) => {
           <img src={deleteIcon} alt="delete icon" />
         </button>
 
-        <img src={image} alt="product image" className={styles.productImage} />
-
-        <p className={styles.productName}>{name}</p>
+        {category && itemId ? (
+          <Link to={`/${category}/${itemId}`} className={styles.productLink}>
+            {productInfo}
+          </Link>
+        ) : (
+          <div className={styles.productLink}>{productInfo}</div>
+        )}
       </div>
 
       <div className={styles.bottomRow}>

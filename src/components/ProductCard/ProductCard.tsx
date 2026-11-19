@@ -67,6 +67,8 @@ export const ProductCard = ({
                 image: product.image,
                 name: product.name,
                 price: `$${product.price}`,
+                category: product.category,
+                itemId: product.itemId,
               });
             } else {
               removeFromCart(product.id);

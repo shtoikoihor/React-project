@@ -19,6 +19,8 @@ export interface CartItem {
   name: string;
   price: string;
   count: number;
+  category: string;
+  itemId: string;
 }
 
 export const CartContext = createContext<CartContextType | undefined>(

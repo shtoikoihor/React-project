@@ -27,6 +27,7 @@ module.exports = {
     },
     ecmaVersion: 12,
     project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
   plugins: [
@@ -45,6 +46,8 @@ module.exports = {
     'max-len': ['error', {
       ignoreTemplateLiterals: true,
       ignoreComments: true,
+      ignoreUrls: true,
+      ignorePattern: '^import\\s.+\\sfrom\\s.+;$',
     }],
     'no-redeclare': [2, { builtinGlobals: true }],
     'no-console': 2,

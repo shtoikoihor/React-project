@@ -235,6 +235,8 @@ export const ProductsDetailsPage = () => {
                   image: productDetails.images[0],
                   name: productDetails.name,
                   price: `$${productDetails.priceDiscount}`,
+                  category: productDetails.category,
+                  itemId: productDetails.id,
                 });
               } else {
                 removeFromCart(productDetails.id);
